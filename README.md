@@ -4,9 +4,9 @@ Projeto realizado em grupo como condição necessária para a aprovação na dis
 
 ## Integrantes do grupo:
 
-* André Coutinho de Macedo Silva;
+* André Coutinho;
 * André Rodrigues;
-* Fernanda;
+* Fernanda Souza;
 * João Caetano;
 * William Wallace.
 
