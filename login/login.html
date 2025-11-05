@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./login.css" />
+    <title>SEM PARADA | LOGIN</title>
+  </head>
+  <body>
+    <header>
+      <h1>SEM PARADA</h1>
+      <nav class="menu">
+        <a href="">PRINCIPAL</a>
+        <a href="">OFERTAS</a>
+        <a href="">HISTÓRICO</a>
+        <a id="perfil" href=""
+          >Nome
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+            alt="profile"
+        /></a>
+      </nav>
+    </header>
+    <main>
+      <section id="login">
+        <h1>LOGIN</h1>
+        <hr />
+        <br />
+        <p>Entre com sua conta para começar</p>
+        <form id="formLogin">
+          <label for="email">E-mail</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            size="15"
+            maxlength="50"
+            required
+          />
+          <label for="password">Senha</label>
+          <input
+            type="password"
+            name="password"
+            id="password"
+            size="15"
+            maxlength="50"
+            required
+          />
+          <div id="preferences">
+            <label class="remember">
+              <input type="checkbox" name="remember" />
+              Lembrar de mim
+            </label>
+            <!-- Talvez apenas resete a senha para uma padrão (Ex. abc1234)-->
+            <a href="">Esqueci a senha</a>
+          </div>
+          <button type="submit">ENTRAR</button>
+        </form>
+        <p id="signin">Não tem uma conta? <a href="signin">Cadastre-se</a></p>
+      </section>
+    </main>
+    <footer>
+      <h5>© 2025 Sem Parada. Todos os direitos reservados.</h5>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,256 @@
+/* Header */
+
+header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: #044c92;
+  padding: 0px;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+header h1,
+header nav {
+  flex: 1;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+h1 a {
+  text-decoration: none;
+  color: #f7fdff;
+}
+
+div {
+  text-align: center;
+}
+
+header h1 {
+  color: #f7fdff;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+nav a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #f7fdff;
+  flex: 1;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+nav a:hover {
+  font-weight: bolder;
+  text-decoration: underline;
+}
+
+img {
+  width: 20%;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-bottom: 2%;
+  margin-top: 2%;
+}
+
+#perfil {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ======================================= */
+
+body {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+footer {
+  padding: 1rem;
+  text-align: center;
+  background-color: #044c92;
+  color: #ffffff;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+}
+
+footer h5 {
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* ======================================= */
+
+#login {
+  background-color: #ffffff;
+  padding: 3rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+#login h1 {
+  margin-bottom: 0.5rem;
+  color: #073e87;
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+
+#login p {
+  color: #858f8e;
+}
+
+#login hr {
+  width: 10%;
+  background-color: #044c92;
+  border: none;
+  height: 3px;
+  border-radius: 360px;
+}
+
+#formLogin {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+#login label {
+  font-weight: bold;
+  text-align: left;
+  color: #1c1e21;
+}
+#login input[type="email"],
+#login input[type="password"] {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 2px solid #d0d0d0;
+  border-radius: 6px;
+  box-sizing: border-box;
+  background-color: #fff;
+  font-size: 0.95rem;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease,
+    background-color 0.25s ease;
+}
+
+#login input[type="email"]:hover,
+#login input[type="password"]:hover {
+  border-color: #044c92;
+}
+
+#login input[type="email"]:focus,
+#login input[type="password"]:focus {
+  border-color: #044c92;
+  background-color: #ecf5ff;
+  outline: none;
+}
+
+#formLogin button[type="submit"] {
+  background-color: #044c92;
+  color: #fff;
+  font-weight: bold;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  opacity: 1;
+  transform: scale(0.98);
+  transition: 0.3s ease;
+}
+
+#formLogin:invalid button[type="submit"] {
+  opacity: 0.5;
+  transform: scale(0.95);
+  cursor: not-allowed;
+}
+
+#formLogin:valid button[type="submit"]:hover {
+  background-color: #073e87;
+  transform: scale(1);
+}
+
+/*==================================================*/
+
+#preferences {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  padding: 0 10px 0 10px;
+}
+
+#preferences a {
+  color: #044c92;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+#preferences a:hover {
+  text-decoration: underline;
+}
+
+#preferences .remember {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #1c1e21;
+  cursor: pointer;
+}
+
+#preferences .remember input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  transition: 0.15s ease;
+}
+
+#preferences .remember input[type="checkbox"]:active {
+  transform: scale(0.9);
+}
+
+/*==================================================*/
+
+p#signin {
+  padding-top: 20px;
+}
+
+p#signin a {
+  color: #044c92;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+p#signin a:hover {
+  text-decoration: underline;
+}
+
+/*==================================================*/
