@@ -103,7 +103,7 @@ footer h5 {
 
 /* ======================================= */
 
-#login {
+#signin {
   background-color: #ffffff;
   padding: 3rem;
   border-radius: 10px;
@@ -113,23 +113,18 @@ footer h5 {
   text-align: center;
 }
 
-#login h1 {
+#signin h1 {
   margin-bottom: 0.5rem;
   color: #073e87;
   font-weight: bold;
   font-size: 2.5rem;
 }
 
-#login hr + p {
-  padding: 1rem;
-  margin: 0;
-}
-
-#login p {
+#signin p {
   color: #858f8e;
 }
 
-#login hr {
+#signin hr {
   width: 10%;
   background-color: #044c92;
   border: none;
@@ -137,18 +132,18 @@ footer h5 {
   border-radius: 360px;
 }
 
-#formLogin {
+#formSignin {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
 }
 
-#login label {
+#signin label {
   font-weight: bold;
   text-align: left;
   color: #1c1e21;
 }
-#login input {
+#signin input {
   width: 100%;
   padding: 0.9rem 1rem;
   border: 2px solid #d0d0d0;
@@ -160,17 +155,17 @@ footer h5 {
     background-color 0.25s ease;
 }
 
-#login input:hover {
+#signin input:hover {
   border-color: #044c92;
 }
 
-#login input:focus {
+#signin input:focus {
   border-color: #044c92;
   background-color: #ecf5ff;
   outline: none;
 }
 
-#formLogin button[type="submit"] {
+#formSignin button[type="submit"] {
   background-color: #044c92;
   color: #fff;
   font-weight: bold;
@@ -184,13 +179,13 @@ footer h5 {
   transition: 0.3s ease;
 }
 
-#formLogin:invalid button[type="submit"] {
+#formSignin:invalid button[type="submit"] {
   opacity: 0.5;
   transform: scale(0.95);
   cursor: not-allowed;
 }
 
-#formLogin:valid button[type="submit"]:hover {
+#formSignin:valid button[type="submit"]:hover {
   background-color: #073e87;
   transform: scale(1);
 }
@@ -240,20 +235,26 @@ footer h5 {
 
 /*==================================================*/
 
-p#signinRedirect {
+p#loginRedirect {
   padding-top: 20px;
-  margin: 0;
 }
 
-p#signinRedirect a {
+p#loginRedirect a {
   color: #044c92;
   text-decoration: none;
   font-weight: 600;
   transition: color 0.2s ease;
 }
 
-p#signinRedirect a:hover {
+p#loginRedirect a:hover {
   text-decoration: underline;
 }
 
 /*==================================================*/
+
+.inputError {
+  color: red;
+  font-size: 0.9em;
+  display: none;
+  margin-bottom: 0;
+}
