@@ -77,31 +77,76 @@
           />
           <label for="password">Senha <span style="color: red">*</span></label>
           <small id="errorPassword" class="inputError"></small>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            size="15"
-            maxlength="50"
-            required
-            oninput="PasswordIsValid(this.value),
-          FormIsValid(this.form), PasswordsAreValid()"
-            onchange="UpdateFirstInput('password'), PasswordIsValid(this.value)"
-          />
+          <div class="togglePasswordContainer" id="togglePasswordContainer1">
+            <input
+              type="password"
+              name="password"
+              id="password"
+              size="15"
+              maxlength="50"
+              required
+              oninput="PasswordIsValid(this.value),
+              FormIsValid(this.form), PasswordsAreValid()"
+              onchange="UpdateFirstInput('password'), PasswordIsValid(this.value)"
+            />
+
+            <button
+              type="button"
+              class="togglePasswordVisibility"
+              onclick="TogglePasswordVisibility(1)"
+              onmouseleave="TogglePasswordVisibility(1, true)"
+            >
+              <img
+                src="../public/icons/icon_show.png"
+                alt="Mostrar Senha"
+                id="show-icon-1"
+                class="show-icon"
+              />
+              <img
+                src="../public/icons/icon_hide.png"
+                alt="Ocultar Senha"
+                id="hide-icon-1"
+                class="hide-icon"
+                style="display: none"
+              />
+            </button>
+          </div>
           <label for="passwordConfirmation"
             >Confirmação da Senha <span style="color: red">*</span></label
           >
           <small id="errorPasswordC" class="inputError"></small>
-          <input
-            type="password"
-            name="passwordConfirmation"
-            id="passwordConfirmation"
-            size="15"
-            maxlength="50"
-            required
-            oninput="PasswordsAreValid(); FormIsValid(this.form)"
-            onchange="UpdateFirstInput('passwordC'); PasswordsAreValid(password, this)"
-          />
+          <div class="togglePasswordContainer" id="togglePasswordContainer2">
+            <input
+              type="password"
+              name="passwordConfirmation"
+              id="passwordConfirmation"
+              maxlength="50"
+              required
+              oninput="PasswordsAreValid(); FormIsValid(this.form)"
+              onchange="UpdateFirstInput('passwordC'); PasswordsAreValid(password, this)"
+            />
+
+            <button
+              type="button"
+              class="togglePasswordVisibility"
+              onclick="TogglePasswordVisibility(2)"
+              onmouseleave="TogglePasswordVisibility(2, true)"
+            >
+              <img
+                src="../public/icons/icon_show.png"
+                alt="Mostrar senha"
+                id="show-icon-2"
+                class="show-icon"
+              />
+              <img
+                src="../public/icons/icon_hide.png"
+                alt="Ocultar senha"
+                id="hide-icon-2"
+                class="hide-icon"
+                style="display: none"
+              />
+            </button>
+          </div>
           <button id="buttonSubmit" type="submit" disabled>ENTRAR</button>
         </form>
         <p id="loginRedirect">
@@ -112,6 +157,7 @@
     <footer>
       <h5>© 2025 Sem Parada. Todos os direitos reservados.</h5>
     </footer>
+    <script src="../global.js"></script>
     <script src="./signin.js"></script>
   </body>
 </html>

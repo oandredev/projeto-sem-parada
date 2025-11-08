@@ -67,10 +67,10 @@ function SaveUserData() {
   // Create new user object
   const newUser = {
     id: users.length + 1,
-    name: nameField,
-    cpf: cpfField /*The CPF is saved without formatting.*/,
     email: emailField,
     password: passwordField,
+    name: nameField,
+    cpf: cpfField /* The CPF is saved without formatting */,
   };
 
   // Save new user
@@ -228,4 +228,27 @@ function PasswordsAreValid(password = null, passwordConfirmation = null) {
   }
 
   return match;
+}
+
+/* ========================================================================= */
+
+/* Exibir/Ocultar Senhas */
+
+function TogglePasswordVisibility(id, forceHide = false) {
+  const passwordInput = document
+    .getElementById(`togglePasswordContainer${id}`)
+    .querySelector("input");
+
+  const showIcon = document.getElementById(`show-icon-${id}`);
+  const hideIcon = document.getElementById(`hide-icon-${id}`);
+
+  if (passwordInput.type === "password" && !forceHide) {
+    passwordInput.type = "text";
+    showIcon.style.display = "none";
+    hideIcon.style.display = "block";
+  } else {
+    passwordInput.type = "password";
+    showIcon.style.display = "block";
+    hideIcon.style.display = "none";
+  }
 }

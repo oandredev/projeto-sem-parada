@@ -28,7 +28,12 @@
           <hr />
         </div>
         <p>Entre com sua conta para começar</p>
-        <form id="formsLogin">
+        <form id="formsLogin" onsubmit="return ValidateLogin(this)">
+          <small
+            id="errorLoginOrPassword"
+            class="inputError"
+            style="color: red; padding-top: 1rem"
+          ></small>
           <label for="email">E-mail</label>
           <input
             type="email"
@@ -39,21 +44,39 @@
             required
           />
           <label for="password">Senha</label>
-          <input
-            type="password"
-            name="password"
-            id="password"
-            size="15"
-            maxlength="50"
-            required
-          />
-          <div id="preferences">
-            <label class="remember">
-              <input type="checkbox" name="remember" />
-              Lembrar de mim
-            </label>
-            <!-- Talvez apenas resete a senha para uma padrão (Ex. abc1234)-->
-            <a href="">Esqueci a senha</a>
+          <div class="togglePasswordContainer" id="togglePasswordContainer1">
+            <input
+              type="password"
+              name="password"
+              id="password"
+              size="15"
+              maxlength="50"
+              required
+              oninput="PasswordIsValid(this.value),
+              FormIsValid(this.form), PasswordsAreValid()"
+              onchange="UpdateFirstInput('password'), PasswordIsValid(this.value)"
+            />
+
+            <button
+              type="button"
+              class="togglePasswordVisibility"
+              onclick="TogglePasswordVisibility(1)"
+              onmouseleave="TogglePasswordVisibility(1, true)"
+            >
+              <img
+                src="../public/icons/icon_show.png"
+                alt="Mostrar Senha"
+                id="show-icon-1"
+                class="show-icon"
+              />
+              <img
+                src="../public/icons/icon_hide.png"
+                alt="Ocultar Senha"
+                id="hide-icon-1"
+                class="hide-icon"
+                style="display: none"
+              />
+            </button>
           </div>
           <button type="submit">ENTRAR</button>
         </form>
@@ -65,5 +88,7 @@
     <footer>
       <h5>© 2025 Sem Parada. Todos os direitos reservados.</h5>
     </footer>
+    <script src="../global.js"></script>
+    <script src="./login.js"></script>
   </body>
 </html>

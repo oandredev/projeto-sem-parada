@@ -274,3 +274,36 @@ p#loginRedirect a:hover {
   display: none;
   margin-bottom: 0;
 }
+/*==================================================*/
+
+.togglePasswordContainer {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.togglePasswordContainer input[type="password"],
+.togglePasswordContainer input[type="text"] {
+  width: 100%;
+  padding-right: 40px;
+  box-sizing: border-box;
+}
+
+.togglePasswordVisibility {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.togglePasswordVisibility img {
+  width: 25px;
+  height: 25px;
+}
