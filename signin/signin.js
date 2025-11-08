@@ -4,6 +4,14 @@ let firstInputName = true,
   firstInputEmail = true,
   firstInputPassword = true,
   firstInputPasswordC = true;
+let buttonSubmit;
+
+/* Forms data*/
+let nameField;
+let cpfField;
+let emailField;
+let passwordField;
+let passwordConfirmationField;
 
 /* ========================================================================= */
 
@@ -15,6 +23,7 @@ function onInit() {
   alertEmail = document.getElementById("errorEmail");
   alertPassword = document.getElementById("errorPassword");
   alertPasswordC = document.getElementById("errorPasswordC");
+  buttonSubmit = document.getElementById("buttonSubmit");
 }
 
 /* ========================================================================= */
@@ -32,23 +41,41 @@ function UpdateFirstInput(input) {
 /* ========================================================================= */
 
 function FormIsValid(form) {
-  const name = form.name.value;
-  const cpf = form.cpf.value.replace(/\D/g, "");
-  const email = form.email.value;
-  const password = form.password.value;
-  const passwordConfirmation = form.passwordConfirmation.value;
+  nameField = form.name.value;
+  cpfField = form.cpf.value.replace(/\D/g, "");
+  emailField = form.email.value;
+  passwordField = form.password.value;
+  passwordConfirmationField = form.passwordConfirmation.value;
 
   const valid =
-    NameIsValid(name) &
-    CPFIsValid(cpf) &
-    EmailIsValid(email) &
-    PasswordIsValid(password) &
-    PasswordsAreValid(password, passwordConfirmation);
+    NameIsValid(nameField) &&
+    CPFIsValid(cpfField) &&
+    EmailIsValid(emailField) &&
+    PasswordIsValid(passwordField) &&
+    PasswordsAreValid(form.passwordField, form.passwordConfirmationField);
+
+  buttonSubmit.disabled = !valid;
 
   if (!valid) return false;
-
-  console.log("✅ Cadastro feito com sucesso");
   return true;
+}
+
+function SaveUserData() {
+  // Get existing users
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+
+  // Create new user object
+  const newUser = {
+    id: users.length + 1,
+    name: nameField,
+    cpf: cpfField,
+    email: emailField,
+    password: passwordField,
+  };
+
+  // Save new user
+  users.push(newUser);
+  localStorage.setItem("users", JSON.stringify(users));
 }
 
 /* ========================================================================= */
@@ -57,7 +84,7 @@ function FormIsValid(form) {
 function NameIsValid(name) {
   if (firstInputName) {
     alertName.style.display = "none";
-    return true;
+    return;
   }
 
   const nameWithoutSpaces = name.replace(/\s+/g, "");
@@ -86,7 +113,7 @@ function formatCPF(raw) {
 function CPFIsValid(cpfRef) {
   if (firstInputCPF) {
     alertCPF.style.display = "none";
-    return true;
+    return;
   }
 
   const cpf = cpfRef.replace(/\D/g, "");
@@ -126,7 +153,7 @@ function CPFIsValid(cpfRef) {
 function EmailIsValid(email) {
   if (firstInputEmail) {
     alertEmail.style.display = "none";
-    return true;
+    return;
   }
 
   const rules = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -147,7 +174,7 @@ function EmailIsValid(email) {
 function PasswordIsValid(password) {
   if (firstInputPassword) {
     alertPassword.style.display = "none";
-    return true;
+    return;
   }
 
   const rules =
@@ -177,11 +204,6 @@ function PasswordIsValid(password) {
 /* Confirmar Senhas */
 
 function PasswordsAreValid(password = null, passwordConfirmation = null) {
-  if (firstInputPasswordC) {
-    alertPasswordC.style.display = "none";
-    return true;
-  }
-
   if (!password || !passwordConfirmation) {
     password = document.getElementById("password");
     passwordConfirmation = document.getElementById("passwordConfirmation");
@@ -189,12 +211,14 @@ function PasswordsAreValid(password = null, passwordConfirmation = null) {
 
   if (!password || !passwordConfirmation) return false;
 
-  if (password.value !== passwordConfirmation.value) {
-    alertPasswordC.textContent = "Senhas não coincidem.";
-    alertPasswordC.style.display = "block";
-    return false;
+  const match = password.value === passwordConfirmation.value;
+
+  if (!firstInputPasswordC) {
+    alertPasswordC.style.display = match ? "none" : "block";
+    if (!match) alertPasswordC.textContent = "Senhas não coincidem.";
+  } else {
+    alertPasswordC.style.display = "none";
   }
 
-  alertPasswordC.style.display = "none";
-  return true;
+  return match;
 }

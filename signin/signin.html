@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./signin.css" />
     <title>SEM PARADA | LOGIN</title>
-    <script src="./signin.js"></script>
   </head>
   <body>
     <header>
@@ -29,7 +28,7 @@
           <hr />
         </div>
         <p>Crie sua conta agora mesmo. Rápido e prático</p>
-        <form id="formSignin" onsubmit="FormIsValid(this)">
+        <form id="formSignin" onsubmit="return SaveUserData()">
           <label for="name"
             >Nome Completo <span style="color: red">*</span></label
           >
@@ -41,7 +40,7 @@
             size="15"
             maxlength="50"
             required
-            oninput="this.value = this.value.replace(/[^A-Za-zÀ-ÿ\s]/g, ''), NameIsValid(this.value)"
+            oninput="this.value = this.value.replace(/[^A-Za-zÀ-ÿ\s]/g, ''), NameIsValid(this.value), FormIsValid(this.form)"
             onchange="UpdateFirstInput('name'), NameIsValid(this.value)"
           />
           <!-- Proibe números e simbolos-->
@@ -60,7 +59,7 @@
             required
             placeholder="123.456.789-10"
             oninput="this.value =
-            formatCPF(this.value), CPFIsValid(this.value)"
+            formatCPF(this.value), CPFIsValid(this.value), FormIsValid(this.form)"
             onchange="UpdateFirstInput('cpf'), CPFIsValid(this.value)"
           />
           <label for="email">E-mail <span style="color: red">*</span></label>
@@ -73,6 +72,7 @@
             size="15"
             maxlength="50"
             required
+            oninput="FormIsValid(this.form)"
             onchange="UpdateFirstInput('email'), EmailIsValid(this.value)"
           />
           <label for="password">Senha <span style="color: red">*</span></label>
@@ -84,7 +84,8 @@
             size="15"
             maxlength="50"
             required
-            oninput="PasswordIsValid(this.value)"
+            oninput="PasswordIsValid(this.value),
+          FormIsValid(this.form), PasswordsAreValid()"
             onchange="UpdateFirstInput('password'), PasswordIsValid(this.value)"
           />
           <label for="passwordConfirmation"
@@ -98,10 +99,10 @@
             size="15"
             maxlength="50"
             required
-            oninput="PasswordsAreValid()"
-            onchange="UpdateFirstInput('passwordC'), PasswordsAreValid()"
+            oninput="PasswordsAreValid(); FormIsValid(this.form)"
+            onchange="UpdateFirstInput('passwordC'); PasswordsAreValid(password, this)"
           />
-          <button type="submit">ENTRAR</button>
+          <button id="buttonSubmit" type="submit" disabled>ENTRAR</button>
         </form>
         <p id="loginRedirect">
           Já tem uma conta? <a href="../login/login.html">Conectar</a>
@@ -111,5 +112,6 @@
     <footer>
       <h5>© 2025 Sem Parada. Todos os direitos reservados.</h5>
     </footer>
+    <script src="./signin.js"></script>
   </body>
 </html>

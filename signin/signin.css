@@ -181,7 +181,7 @@ footer h5 {
   outline: none;
 }
 
-#formSignin button[type="submit"] {
+#formSignin #buttonSubmit {
   background-color: #044c92;
   color: #fff;
   font-weight: bold;
@@ -192,18 +192,18 @@ footer h5 {
   cursor: pointer;
   opacity: 1;
   transform: scale(0.98);
-  transition: 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease, opacity 0.3s ease;
 }
 
-#formSignin:invalid button[type="submit"] {
+#formSignin #buttonSubmit:enabled:hover {
+  background-color: #073e87;
+  transform: scale(1);
+}
+
+#formSignin #buttonSubmit:disabled {
   opacity: 0.5;
   transform: scale(0.95);
   cursor: not-allowed;
-}
-
-#formSignin:valid button[type="submit"]:hover {
-  background-color: #073e87;
-  transform: scale(1);
 }
 
 /*==================================================*/
