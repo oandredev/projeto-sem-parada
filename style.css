@@ -1,1 +1,170 @@
-/* Documento de estilização em CSS */
+body {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  margin: 0;
+}
+
+/* ======================================= */
+/* Header */
+
+header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: #044c92;
+  padding: 0.1rem;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+}
+
+header h1,
+header nav {
+  flex: 1;
+  padding: 0 1rem;
+  margin: 0;
+}
+
+h1 a {
+  text-decoration: none;
+  color: #f7fdff;
+}
+
+div {
+  text-align: center;
+}
+
+header h1 {
+  color: #f7fdff;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+nav a {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  color: #f7fdff;
+  flex: 1;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+nav a:hover {
+  font-weight: bolder;
+  text-decoration: underline;
+}
+
+img {
+  width: 20%;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-bottom: 2%;
+  margin-top: 2%;
+}
+
+#perfil {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ======================================= */
+
+#boas_vindas {
+  margin-left: 7%;
+  margin-right: 7%;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: #044c92;
+}
+
+#boas_vindas h1 {
+  margin-bottom: 5%;
+  margin-top: 0%;
+  font-size: 350%;
+}
+
+#boas_vindas h2 {
+  margin: 3%;
+  color: black;
+  font-size: 150%;
+}
+
+#boas_vindas p {
+  color: black;
+  font-size: 130%;
+}
+
+.main_creators_images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main_creators_images a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.main_creators_images a img {
+  width: 70%;
+  margin-left: 0%;
+  margin-right: 0%;
+  margin-bottom: 0%;
+  padding: 0%;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  transform: scale(1);
+}
+
+.main_creators_images a img:hover {
+  transform: scale(1.1);
+}
+
+.main_creators_images a p {
+  font-size: 120% !important;
+  font-weight: bold;
+  color: #044c92 !important;
+}
+
+.main_creators_images a p:hover {
+  color: #774f9e !important;
+}
+
+/* ======================================= */
+
+footer {
+  padding: 1rem;
+  text-align: center;
+  background-color: #044c92;
+  color: #ffffff;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+}
+
+footer p {
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin: 0;
+}
