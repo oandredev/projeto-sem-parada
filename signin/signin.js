@@ -6,7 +6,7 @@ let firstInputName = true,
   firstInputPasswordC = true;
 let buttonSubmit;
 
-/* Forms data*/
+/* Forms data */
 let nameField;
 let cpfField;
 let emailField;
@@ -27,8 +27,6 @@ function onInit() {
 }
 
 /* ========================================================================= */
-
-/* Isso é pra evitar que o usuário receba erros antes de digitar "tudo" na primeira tentativa */
 
 function UpdateFirstInput(input) {
   if (input === "name") firstInputName = false;
@@ -52,54 +50,53 @@ function FormIsValid(form) {
     CPFIsValid(cpfField) &&
     EmailIsValid(emailField) &&
     PasswordIsValid(passwordField) &&
-    PasswordsAreValid(form.password, form.passwordConfirmation); // Nesse caso, preciso do elemento (tag), não do valor inicialmente
+    PasswordsAreValid(form.password, form.passwordConfirmation);
 
   buttonSubmit.disabled = !valid;
-
-  if (!valid) return false;
-  return true;
+  return valid;
 }
 
 function SaveUserData() {
-  // Get existing users
   const users = JSON.parse(localStorage.getItem("users")) || [];
 
-  // Create new user object
   const newUser = {
     id: users.length + 1,
     email: emailField,
     password: passwordField,
     name: nameField,
-    cpf: cpfField /* The CPF is saved without formatting */,
+    cpf: cpfField,
   };
 
-  // Save new user
   users.push(newUser);
   localStorage.setItem("users", JSON.stringify(users));
+
+  setTimeout(() => {
+    window.location.href = "/login/login.html";
+  }, 100);
+
+  return false;
 }
 
 /* ========================================================================= */
 /* Nome */
 
 function NameIsValid(name) {
-  if (firstInputName) {
-    alertName.style.display = "none";
-    return;
-  }
-
   const nameWithoutSpaces = name.replace(/\s+/g, "");
+  const isValid = nameWithoutSpaces.length >= 3;
 
-  if (nameWithoutSpaces.length < 3) {
-    alertName.textContent = "Nome inválido — mínimo 3 letras.";
-    alertName.style.display = "block";
-    return false;
+  if (!firstInputName) {
+    alertName.style.display = isValid ? "none" : "block";
+    if (!isValid) alertName.textContent = "Nome inválido — mínimo 3 letras.";
+  } else {
+    alertName.style.display = "none";
   }
 
-  alertName.style.display = "none";
-  return true;
+  return isValid;
 }
 
 /* ========================================================================= */
+/* CPF */
+
 /* CPF */
 
 function formatCPF(raw) {
@@ -111,92 +108,70 @@ function formatCPF(raw) {
 }
 
 function CPFIsValid(cpfRef) {
-  /* 
-    Examples of valid CPFs:
-
-    88838607800
-    44691566201
-    13428879562
-  */
-
-  if (firstInputCPF) {
-    alertCPF.style.display = "none";
-    return;
-  }
-
   const cpf = cpfRef.replace(/\D/g, "");
-  if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) {
-    alertCPF.textContent = "CPF inválido.";
-    alertCPF.style.display = "block";
-    return false;
+  let isValid = true;
+
+  if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) isValid = false;
+
+  if (isValid) {
+    let soma = 0;
+    for (let i = 0; i < 9; i++) soma += parseInt(cpf[i]) * (10 - i);
+    let resto = (soma * 10) % 11;
+    if (resto === 10) resto = 0;
+    if (resto !== parseInt(cpf[9])) isValid = false;
+
+    soma = 0;
+    for (let i = 0; i < 10; i++) soma += parseInt(cpf[i]) * (11 - i);
+    resto = (soma * 10) % 11;
+    if (resto === 10) resto = 0;
+    if (resto !== parseInt(cpf[10])) isValid = false;
   }
 
-  let soma = 0;
-  for (let i = 0; i < 9; i++) soma += parseInt(cpf[i]) * (10 - i);
-  let resto = (soma * 10) % 11;
-  if (resto === 10 || resto === 11) resto = 0;
-  if (resto !== parseInt(cpf[9])) {
-    alertCPF.textContent = "CPF inválido.";
-    alertCPF.style.display = "block";
-    return false;
+  if (!firstInputCPF) {
+    alertCPF.style.display = isValid ? "none" : "block";
+    if (!isValid) alertCPF.textContent = "CPF inválido.";
+  } else {
+    alertCPF.style.display = "none";
   }
 
-  soma = 0;
-  for (let i = 0; i < 10; i++) soma += parseInt(cpf[i]) * (11 - i);
-  resto = (soma * 10) % 11;
-  if (resto === 10 || resto === 11) resto = 0;
-  if (resto !== parseInt(cpf[10])) {
-    alertCPF.textContent = "CPF inválido.";
-    alertCPF.style.display = "block";
-    return false;
-  }
-
-  alertCPF.style.display = "none";
-  return true;
+  return isValid;
 }
 
 /* ========================================================================= */
 /* E-mail */
 
 function EmailIsValid(email) {
-  if (firstInputEmail) {
-    alertEmail.style.display = "none";
-    return;
-  }
-
   const rules = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  const isValid = rules.test(email);
 
-  if (!rules.test(email)) {
-    alertEmail.textContent = "E-mail inválido.";
-    alertEmail.style.display = "block";
-    return false;
+  if (!firstInputEmail) {
+    alertEmail.style.display = isValid ? "none" : "block";
+    if (!isValid) alertEmail.textContent = "E-mail inválido.";
+  } else {
+    alertEmail.style.display = "none";
   }
 
-  alertEmail.style.display = "none";
-  return true;
+  return isValid;
 }
 
 /* ========================================================================= */
 /* Senha */
 
 function PasswordIsValid(password) {
-  if (firstInputPassword) {
-    alertPassword.style.display = "none";
-    return;
-  }
-
   const rules =
     /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&._-])[A-Za-z\d@$!%*?&._-]{8,}$/;
+  const isValid = rules.test(password);
 
-  if (!rules.test(password)) {
-    alertPassword.textContent =
-      "Senha inválida — mínimo 8 caracteres, com maiúscula, minúscula, número e símbolo.";
-    alertPassword.style.display = "block";
-    return false;
+  if (!firstInputPassword) {
+    alertPassword.style.display = isValid ? "none" : "block";
+    if (!isValid)
+      alertPassword.textContent =
+        "Senha inválida — mínimo 8 caracteres, com maiúscula, minúscula, número e símbolo.";
+  } else {
+    alertPassword.style.display = "none";
   }
 
-  alertPassword.style.display = "none";
-
+  // Atualiza alerta de confirmação se já digitado
   const passwordConfirmation = document.getElementById("passwordConfirmation");
   if (passwordConfirmation && passwordConfirmation.value.length > 0)
     PasswordsAreValid(
@@ -204,7 +179,7 @@ function PasswordIsValid(password) {
       passwordConfirmation
     );
 
-  return true;
+  return isValid;
 }
 
 /* ========================================================================= */
@@ -231,7 +206,6 @@ function PasswordsAreValid(password = null, passwordConfirmation = null) {
 }
 
 /* ========================================================================= */
-
 /* Exibir/Ocultar Senhas */
 
 function TogglePasswordVisibility(id, forceHide = false) {

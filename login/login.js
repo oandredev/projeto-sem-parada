@@ -56,9 +56,9 @@ function ValidateLogin(form) {
 
   localStorage.setItem("loggedUser", JSON.stringify(userFound));
 
-  // TALVEZ ADICIONAR A OPÇÃO DE "LEMBRAR DE MIM" PARA LOGIN AUTOMÁTICO
+  setTimeout(() => {
+    window.location.href = "/offers/offers.html";
+  }, 100);
 
-  // REDIRECIONAR PARA A PÁGINA PRINCIPAL (FALTA FAZER)
-
-  return true;
+  return false;
 }

@@ -190,7 +190,7 @@ header {
   }
 }
 .account-container {
-  display: flex;
+  display: none;
   gap: 10px;
 }
 

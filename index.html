@@ -15,36 +15,38 @@
     <div class="fake-header"></div>
     <header>
       <a class="logo-area" href="/">
-        <img src="./public/logo/logo.png" alt="Logo Sem Parada" />
+        <img src="../public/logo/logo.png" alt="Logo Sem Parada" />
         <h1>Sem Parada</h1>
       </a>
 
       <nav class="menu">
-        <a href="./offers/offers.html">PASSAGENS</a>
-        <a href="./history/history.html">HISTÓRICO</a>
-        <a href="./about-us/about-us.html">SOBRE NÓS</a>
+        <a href="../offers/offers.html">PASSAGENS</a>
+        <a href="../history/history.html">HISTÓRICO</a>
+        <a href="../about-us/about-us.html">SOBRE NÓS</a>
       </nav>
 
       <div class="account-container">
-        <a id="createAccount" href="./signin/signin.html"> CRIAR CONTA </a>
-        <a id="joinInAccount" href="./login/login.html"> ENTRAR </a>
+        <a id="createAccount" href="../signin/signin.html"> CRIAR CONTA </a>
+        <a id="joinInAccount" href="../login/login.html"> ENTRAR </a>
       </div>
 
       <div class="user-menu-container" style="display: none">
         <button id="usernameH">
-          <span class="username username-btn">Nome do Usuário</span>
+          <span id="username1" class="username username-btn"
+            >Nome do Usuário</span
+          >
           <span class="arrow-down">▼</span>
         </button>
 
         <div id="userDropdown" class="user-menu-dropdown">
           <div class="user-info">
-            <div class="username username-dd">NAME</div>
+            <div id="username2" class="username username-dd">NAME</div>
             <div class="email email-dd">name@gmail.com</div>
           </div>
 
           <hr class="separator" />
 
-          <button class="menu-item logout-button" (click)="logout()">
+          <button id="logoutButton" class="menu-item logout-button">
             Sair
           </button>
         </div>
@@ -66,7 +68,7 @@
       </p>
     </footer>
 
-    <script src="./global/global.js"></script>
+    <script type="module" src="./global/global/global.js"></script>
     <script src="./index.js"></script>
   </body>
 </html>

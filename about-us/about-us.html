@@ -32,19 +32,21 @@
 
       <div class="user-menu-container" style="display: none">
         <button id="usernameH">
-          <span class="username username-btn">Nome do Usuário</span>
+          <span id="username1" class="username username-btn"
+            >Nome do Usuário</span
+          >
           <span class="arrow-down">▼</span>
         </button>
 
         <div id="userDropdown" class="user-menu-dropdown">
           <div class="user-info">
-            <div class="username username-dd">NAME</div>
-            <div class="email email-dd">name@gmail.com</div>
+            <div id="username2" class="username username-dd">NAME</div>
+            <div id="emailUser" class="email email-dd">name@gmail.com</div>
           </div>
 
           <hr class="separator" />
 
-          <button class="menu-item logout-button" (click)="logout()">
+          <button id="logoutButton" class="menu-item logout-button">
             Sair
           </button>
         </div>
@@ -117,7 +119,7 @@
         <a href="../about-us/about-us.html">Sobre nós</a>
       </p>
     </footer>
-    <script src="../global/global.js"></script>
+    <script type="module" src="../global/global/global.js"></script>
     <script src="./about-us.js"></script>
   </body>
 </html>

@@ -30,19 +30,21 @@
 
       <div class="user-menu-container" style="display: none">
         <button id="usernameH">
-          <span class="username username-btn">Nome do Usuário</span>
+          <span id="username1" class="username username-btn"
+            >Nome do Usuário</span
+          >
           <span class="arrow-down">▼</span>
         </button>
 
         <div id="userDropdown" class="user-menu-dropdown">
           <div class="user-info">
-            <div class="username username-dd">NAME</div>
-            <div class="email email-dd">name@gmail.com</div>
+            <div id="username2" class="username username-dd">NAME</div>
+            <div id="emailUser" class="email email-dd">name@gmail.com</div>
           </div>
 
           <hr class="separator" />
 
-          <button class="menu-item logout-button" (click)="logout()">
+          <button id="logoutButton" class="menu-item logout-button">
             Sair
           </button>
         </div>
@@ -77,7 +79,9 @@
           </h2>
 
           <div class="botoes">
-            <button><a href="">Clique aqui</a></button>
+            <button>
+              <a href="/seat-selection/seat-selection.html">Clique aqui</a>
+            </button>
           </div>
         </div>
       </div>
@@ -86,6 +90,6 @@
       <p>Copyright © SEM PARADA | Centro Universitário Senac</p>
     </footer>
 
-    <script src="../../global/global.js"></script>
+    <script type="module" src="../../global/global/global.js"></script>
   </body>
 </html>

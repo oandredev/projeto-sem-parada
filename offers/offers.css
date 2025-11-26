@@ -4,6 +4,7 @@
   --branco: #ffffff;
   --shadow: 0 8px 24px #0124472a;
   --shadow-hover: 0 16px 36px rgba(13, 71, 161, 0.25);
+  --radius: 12px;
 }
 
 /* BOAS-VINDAS */
