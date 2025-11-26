@@ -3,6 +3,7 @@ import {
   logoutUser,
 } from "../../services/loginService/loginService.js";
 import { updateHeader } from "../header/headerController.js";
+import { initializeViagens } from "../data/dataController.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   setTimeout(initializeAll, 3); // Delay pra evitar alerta de desempenho
@@ -19,6 +20,8 @@ function initializeAll() {
   let loggedUser = getLoggedUser();
 
   updateHeader(loggedUser);
+
+  initializeViagens();
 }
 
 const btn = document.getElementById("logoutButton");

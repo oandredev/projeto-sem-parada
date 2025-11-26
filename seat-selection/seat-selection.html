@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="./seat-selection.css" />
 
-    <title>SEM PARADA | OFERTAS</title>
+    <title>SEM PARADA | SELEÇÃO DE ASSENTOS</title>
   </head>
   <body>
     <div class="fake-header"></div>
@@ -41,7 +41,7 @@
         <div id="userDropdown" class="user-menu-dropdown">
           <div class="user-info">
             <div id="username2" class="username username-dd">NAME</div>
-            <div class="email email-dd">name@gmail.com</div>
+            <div id="emailUser" class="email email-dd">name@gmail.com</div>
           </div>
 
           <hr class="separator" />
@@ -52,7 +52,51 @@
         </div>
       </div>
     </header>
-    <main></main>
+    <main>
+      <h1>Reservas de Passagens</h1>
+      <h2>São Paulo - Guarujá</h2>
+
+      <div class="container">
+        <div class="onibus-container">
+          <div class="onibus-frente">FRENTE</div>
+
+          <div id="mapa-assentos"></div>
+
+          <div class="onibus-frente">FUNDO</div>
+        </div>
+
+        <div class="resumo-compra">
+          <h2>Sua Seleção</h2>
+          <ul id="assentos-selecionados">
+            <li>Nenhum assento selecionado</li>
+          </ul>
+          <p id="total-valor">Subtotal: R$ 0.00</p>
+          <div class="botoes-acao">
+            <button class="btn btn-prosseguir" id="btn-finalizar-compra">
+              Prosseguir
+            </button>
+            <button class="btn btn-limpar" id="btn-limpar-selecao">
+              Limpar Seleção
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="legenda">
+        <div class="legenda-item">
+          <div class="legenda-cor legenda-disponivel"></div>
+          <span>Disponível</span>
+        </div>
+        <div class="legenda-item">
+          <div class="legenda-cor legenda-selecionado"></div>
+          <span>Selecionado</span>
+        </div>
+        <div class="legenda-item">
+          <div class="legenda-cor legenda-ocupado"></div>
+          <span>Ocupado</span>
+        </div>
+      </div>
+    </main>
     <footer>
       <p>
         Copyright © Sem Parada |
@@ -63,7 +107,7 @@
         <a href="../about-us/about-us.html">Sobre nós</a>
       </p>
     </footer>
-    <script src="../global.js"></script>
+    <script type="module" src="../global/global/global.js"></script>
     <script src="./seat-selection.js"></script>
   </body>
 </html>
