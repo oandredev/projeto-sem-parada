@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../global/global/global.css" />
+    <link rel="stylesheet" href="../global/header/header.css" />
+    <link rel="stylesheet" href="../global/footer/footer.css" />
+
+    <link rel="stylesheet" href="./login.css" />
+
+    <title>SEM PARADA | LOGIN</title>
+  </head>
+  <body>
+    <div class="fake-header"></div>
+    <header>
+      <a class="logo-area" href="/">
+        <img src="../public/logo/logo.png" alt="Logo Sem Parada" />
+        <h1>Sem Parada</h1>
+      </a>
+
+      <nav class="menu">
+        <a href="../offers/offers.html">PASSAGENS</a>
+        <a href="../history/history.html">HISTÓRICO</a>
+        <a href="../about-us/about-us.html">SOBRE NÓS</a>
+      </nav>
+
+      <div class="account-container">
+        <a id="createAccount" href="../signin/signin.html"> CRIAR CONTA </a>
+        <a id="joinInAccount" href="../login/login.html"> ENTRAR </a>
+      </div>
+
+      <div class="user-menu-container" style="display: none">
+        <button id="usernameH">
+          <span id="username1" class="username username-btn"
+            >Nome do Usuário</span
+          >
+          <span class="arrow-down">▼</span>
+        </button>
+
+        <div id="userDropdown" class="user-menu-dropdown">
+          <div class="user-info">
+            <div id="username2" class="username username-dd">NAME</div>
+            <div class="email email-dd">name@gmail.com</div>
+          </div>
+
+          <hr class="separator" />
+
+          <button id="logoutButton" class="menu-item logout-button">
+            Sair
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section id="login">
+        <div id="loginTitle">
+          <h1>Login</h1>
+          <hr />
+        </div>
+        <p>Entre com sua conta para começar</p>
+        <form id="formsLogin" onsubmit="return ValidateLogin(this)">
+          <small
+            id="errorLoginOrPassword"
+            class="inputError"
+            style="color: red; padding-top: 1rem"
+          ></small>
+          <label for="email">E-mail</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            size="15"
+            maxlength="50"
+            required
+          />
+          <label for="password">Senha</label>
+          <div class="togglePasswordContainer" id="togglePasswordContainer1">
+            <input
+              type="password"
+              name="password"
+              id="password"
+              size="15"
+              maxlength="50"
+              required
+            />
+
+            <button
+              type="button"
+              class="togglePasswordVisibility"
+              onclick="TogglePasswordVisibility(1)"
+              onmouseleave="TogglePasswordVisibility(1, true)"
+            >
+              <img
+                src="../public/icons/icon_show.png"
+                alt="Mostrar Senha"
+                id="show-icon-1"
+                class="show-icon"
+              />
+              <img
+                src="../public/icons/icon_hide.png"
+                alt="Ocultar Senha"
+                id="hide-icon-1"
+                class="hide-icon"
+                style="display: none"
+              />
+            </button>
+          </div>
+          <button type="submit">ENTRAR</button>
+        </form>
+        <p id="signinRedirect">
+          Não tem uma conta? <a href="../signin/signin.html">Cadastre-se</a>
+        </p>
+      </section>
+    </main>
+    <footer>
+      <p>
+        Copyright © Sem Parada |
+        <a target="_blank" href="https://www.sp.senac.br/"
+          >Centro Universitário Senac</a
+        >
+        |
+        <a href="../about-us/about-us.html">Sobre nós</a>
+      </p>
+    </footer>
+    <script type="module" src="../global/global/global.js"></script>
+    <script src="./login.js"></script>
+  </body>
+</html>

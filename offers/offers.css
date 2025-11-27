@@ -1,0 +1,112 @@
+:root {
+  --azul: #0d47a1;
+  --azul-claro: #1976d2;
+  --branco: #ffffff;
+  --shadow: 0 8px 24px #0124472a;
+  --shadow-hover: 0 16px 36px rgba(13, 71, 161, 0.25);
+  --radius: 12px;
+}
+
+/* BOAS-VINDAS */
+.welcome-section {
+  text-align: center;
+  padding: 40px 20px 20px;
+  font-size: 18px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.welcome-title {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+.welcome-text {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* MAIN */
+.main-site {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px 60px;
+}
+.headline-section {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* GRID */
+.grid-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+@media (max-width: 900px) {
+  .grid-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 560px) {
+  .grid-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* CARD */
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
+}
+
+.card-destino {
+  background: #f7fdff;
+  border: 2px solid #012447;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition: 0.2s;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden; /* <-- ADICIONADO */
+}
+
+.card-destino:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+.card-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 2px solid #012447;
+  border-top-left-radius: var(--radius); /* <-- ADICIONADO */
+  border-top-right-radius: var(--radius); /* <-- ADICIONADO */
+}
+
+.card-content {
+  padding: 20px;
+  flex: 1;
+}
+
+.card-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.card-text {
+  font-size: 16px;
+  margin: 6px 0;
+}
+.card-info,
+.card-preco {
+  font-size: 15px;
+  color: #044c92;
+  font-weight: bold;
+  margin: 3px 0;
+}

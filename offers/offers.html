@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../global/global/global.css" />
+    <link rel="stylesheet" href="../global/header/header.css" />
+    <link rel="stylesheet" href="../global/footer/footer.css" />
+
+    <link rel="stylesheet" href="./offers.css" />
+
+    <title>SEM PARADA | OFERTAS</title>
+  </head>
+  <body>
+    <div class="fake-header"></div>
+    <header>
+      <a class="logo-area" href="/">
+        <img src="../public/logo/logo.png" alt="Logo Sem Parada" />
+        <h1>Sem Parada</h1>
+      </a>
+
+      <nav class="menu">
+        <a href="../offers/offers.html">PASSAGENS</a>
+        <a href="../history/history.html">HISTÓRICO</a>
+        <a href="../about-us/about-us.html">SOBRE NÓS</a>
+      </nav>
+
+      <div class="account-container">
+        <a id="createAccount" href="../signin/signin.html"> CRIAR CONTA </a>
+        <a id="joinInAccount" href="../login/login.html"> ENTRAR </a>
+      </div>
+
+      <div class="user-menu-container" style="display: none">
+        <button id="usernameH">
+          <span id="username1" class="username username-btn"
+            >Nome do Usuário</span
+          >
+          <span class="arrow-down">▼</span>
+        </button>
+
+        <div id="userDropdown" class="user-menu-dropdown">
+          <div class="user-info">
+            <div id="username2" class="username username-dd">NAME</div>
+            <div id="emailUser" class="email email-dd">name@gmail.com</div>
+          </div>
+
+          <hr class="separator" />
+
+          <button id="logoutButton" class="menu-item logout-button">
+            Sair
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="main-site">
+        <div class="headline-section">
+          Confira agora as passagens com os melhores preços:
+        </div>
+
+        <section class="grid-section">
+          <!-- São Paulo -->
+          <a
+            href="../offers-details/sao_paulo/sao_paulo.html"
+            class="card-link"
+          >
+            <article
+              id="card-sp"
+              class="card-destino"
+              data-ida="2025-12-01"
+              data-volta="2025-12-05"
+              data-preco="R$ 250,00"
+            >
+              <img
+                class="card-img"
+                src="https://t3.ftcdn.net/jpg/01/24/15/06/360_F_124150627_OEbMpvnk0zk2zhfJ2YR2FNFnm2o2g3nu.jpg"
+                alt="Cidade de São Paulo"
+              />
+              <div class="card-content card-content-sp">
+                <h3 class="card-title">Cidade de São Paulo</h3>
+                <p class="card-text">
+                  A maior metrópole do Brasil, cheia de cultura, gastronomia e
+                  vida urbana.
+                </p>
+                <p id="ida-11" class="card-info">Ida: 01/12/2025</p>
+                <p id="volta-1" class="card-info">Volta: 05/12/2025</p>
+                <p id="preço-1" class="card-preco">Valor: R$ 250,00</p>
+              </div>
+            </article>
+          </a>
+
+          <!-- Campos do Jordão -->
+          <a
+            href="../offers-details/campos_jordao/campos_jordao.html"
+            class="card-link"
+          >
+            <article
+              id="card-campos"
+              class="card-destino"
+              data-ida="2025-12-06"
+              data-volta="2025-12-10"
+              data-preco="R$ 320,00"
+            >
+              <img
+                class="card-img"
+                src="https://www.civitatis.com/blog/wp-content/uploads/2024/08/shutterstock_2222759763-scaled.jpg"
+                alt="Campos do Jordão"
+              />
+              <div class="card-content card-content-campos">
+                <h3 class="card-title">Campos do Jordão</h3>
+                <p class="card-text">Arquitetura alpina e clima de montanha.</p>
+                <p id="ida-2" class="card-info">Ida: 06/12/2025</p>
+                <p id="volta-2" class="card-info">Volta: 10/12/2025</p>
+                <p id="preço-2" class="card-preco">Valor: R$ 320,00</p>
+              </div>
+            </article>
+          </a>
+
+          <!-- Brotas -->
+          <a href="../offers-details/brotas/brotas.html" class="card-link">
+            <article
+              id="card-brotas"
+              class="card-destino"
+              data-ida="2025-12-08"
+              data-volta="2025-12-12"
+              data-preco="R$ 280,00"
+            >
+              <img
+                class="card-img"
+                src="https://brotas.com.br/wp-content/uploads/2017/08/areia-que-canta.jpg"
+                alt="Brotas"
+              />
+              <div class="card-content card-content-brotas">
+                <h3 class="card-title">Brotas</h3>
+                <p class="card-text">Capital da aventura e ecoturismo.</p>
+                <p id="ida-3" class="card-info">Ida: 08/12/2025</p>
+                <p id="volta-3" class="card-info">Volta: 12/12/2025</p>
+                <p id="preço-3" class="card-preco">Valor: R$ 280,00</p>
+              </div>
+            </article>
+          </a>
+
+          <!-- Holambra -->
+          <a href="../offers-details/holambra/holambra.html" class="card-link">
+            <article
+              id="card-holambra"
+              class="card-destino"
+              data-ida="2025-12-09"
+              data-volta="2025-12-11"
+              data-preco="R$ 190,00"
+            >
+              <img
+                class="card-img"
+                src="https://static.ndmais.com.br/2025/06/holambra-1.jpg"
+                alt="Holambra"
+              />
+              <div class="card-content card-content-holambra">
+                <h3 class="card-title">Holambra</h3>
+                <p class="card-text">
+                  Cidade das flores e tradições holandesas.
+                </p>
+                <p id="ida-4" class="card-info">Ida: 09/12/2025</p>
+                <p id="volta-4" class="card-info">Volta: 11/12/2025</p>
+                <p id="preço-4" class="card-preco">Valor: R$ 190,00</p>
+              </div>
+            </article>
+          </a>
+
+          <!-- Aparecida -->
+          <a
+            href="../offers-details/aparecida/aparecida.html"
+            class="card-link"
+          >
+            <article
+              id="card-aparecida"
+              class="card-destino"
+              data-ida="2025-12-11"
+              data-volta="2025-12-13"
+              data-preco="R$ 170,00"
+            >
+              <img
+                class="card-img"
+                src="https://www.unitur.com.br/wp-content/uploads/2021/11/Basilica-de-Nossa-Senhora-de-Aparecida.-Fonte-Canva-1015x630.png"
+                alt="Aparecida"
+              />
+              <div class="card-content card-content-aparecida">
+                <h3 class="card-title">Aparecida</h3>
+                <p class="card-text">Centro religioso e cultural do Brasil.</p>
+                <p id="ida-5" class="card-info">Ida: 11/12/2025</p>
+                <p id="volta-5" class="card-info">Volta: 13/12/2025</p>
+                <p id="preço-5" class="card-preco">Valor: R$ 170,00</p>
+              </div>
+            </article>
+          </a>
+
+          <!-- Guarujá -->
+          <a href="../offers-details/guaruja/guaruja.html" class="card-link">
+            <article
+              id="card-guaruja"
+              class="card-destino"
+              data-ida="2025-12-12"
+              data-volta="2025-12-16"
+              data-preco="R$ 230,00"
+            >
+              <img
+                class="card-img"
+                src="https://magazine.zarpo.com.br/wp-content/uploads/2017/02/capa-mag_Praias-no-Guaruja-770x515.jpg"
+                alt="Guarujá"
+              />
+              <div class="card-content card-content-guaruja">
+                <h3 class="card-title">Guarujá</h3>
+                <p class="card-text">
+                  Pérola do Atlântico, com praias famosas e infraestrutura
+                  turística.
+                </p>
+                <p id="ida-6" class="card-info">Ida: 12/12/2025</p>
+                <p id="volta-6" class="card-info">Volta: 16/12/2025</p>
+                <p id="preço-6" class="card-preco">Valor: R$ 230,00</p>
+              </div>
+            </article>
+          </a>
+
+          <!-- Ilhabela -->
+          <a href="../offers-details/ilhabela/ilhabela.html" class="card-link">
+            <article
+              id="card-ilhabela"
+              class="card-destino"
+              data-ida="2025-12-14"
+              data-volta="2025-12-18"
+              data-preco="R$ 360,00"
+            >
+              <img
+                class="card-img"
+                src="https://www.viagenscinematograficas.com.br/wp-content/uploads/2020/09/Ilhabela-SP-Praias-O-que-Fazer-Capa-2-1536x1024.jpg"
+                alt="Ilhabela"
+              />
+              <div class="card-content card-content-ilhabela">
+                <h3 class="card-title">Ilhabela</h3>
+                <p class="card-text">Praias paradisíacas e trilhas.</p>
+                <p id="ida-7" class="card-info">Ida: 14/12/2025</p>
+                <p id="volta-7" class="card-info">Volta: 18/12/2025</p>
+                <p id="preço-7" class="card-preco">Valor: R$ 360,00</p>
+              </div>
+            </article>
+          </a>
+
+          <!-- Ubatuba -->
+          <a href="../offers-details/ubatuba/ubatuba.html" class="card-link">
+            <article
+              id="card-ubatuba"
+              class="card-destino"
+              data-ida="2025-12-15"
+              data-volta="2025-12-19"
+              data-preco="R$ 340,00"
+            >
+              <img
+                class="card-img"
+                src="https://images3.motor-reserva.com.br/curl/motor_reserva/images/pagina_generica/cliente_1408/202305281685304327Cedrinho.jpg"
+                alt="Ubatuba"
+              />
+              <div class="card-content card-content-ubatuba">
+                <h3 class="card-title">Ubatuba</h3>
+                <p class="card-text">Mais de 100 praias e biodiversidade.</p>
+                <p id="ida-8" class="card-info">Ida: 15/12/2025</p>
+                <p id="volta-8" class="card-info">Volta: 19/12/2025</p>
+                <p id="preço-8" class="card-preco">Valor: R$ 340,00</p>
+              </div>
+            </article>
+          </a>
+
+          <!-- Santos -->
+          <a href="../offers-details/santos/santos.html" class="card-link">
+            <article
+              id="card-santos"
+              class="card-destino"
+              data-ida="2025-12-17"
+              data-volta="2025-12-20"
+              data-preco="R$ 210,00"
+            >
+              <img
+                class="card-img"
+                src="https://www.olaviajantes.tur.br/wp-content/uploads/2024/04/jardins-da-orla-de-santos-scaled.jpg"
+                alt="Santos"
+              />
+              <div class="card-content card-content-santos">
+                <h3 class="card-title">Santos</h3>
+                <p class="card-text">
+                  Praias urbanas com jardins na orla, história portuária e o
+                  Museu do Café.
+                </p>
+                <p id="ida-9" class="card-info">Ida: 17/12/2025</p>
+                <p id="volta-9" class="card-info">Volta: 20/12/2025</p>
+                <p id="preço-9" class="card-preco">Valor: R$ 210,00</p>
+              </div>
+            </article>
+          </a>
+
+          <!-- Serra da Mantiqueira -->
+          <a
+            href="../offers-details/serra_mantiqueira/serra_mantiqueira.html"
+            class="card-link"
+          >
+            <article
+              id="card-mantiqueira"
+              class="card-destino"
+              data-ida="2025-12-18"
+              data-volta="2025-12-22"
+              data-preco="R$ 390,00"
+            >
+              <img
+                class="card-img"
+                src="https://magazine.zarpo.com.br/wp-content/uploads/2018/09/10-cidades-imperdiveis-para-conhecer-na-serra-da-mantiqueira-2.jpg"
+                alt="Serra da Mantiqueira"
+              />
+              <div class="card-content card-content-mantiqueira">
+                <h3 class="card-title">Serra da Mantiqueira</h3>
+                <p class="card-text">
+                  Natureza exuberante, clima de montanha e refúgios charmosos.
+                </p>
+                <p id="ida-10" class="card-info">Ida: 18/12/2025</p>
+                <p id="volta-10" class="card-info">Volta: 22/12/2025</p>
+                <p id="preço-10" class="card-preco">Valor: R$ 390,00</p>
+              </div>
+            </article>
+          </a>
+
+          <!-- São Roque -->
+          <a
+            href="../offers-details/sao_roque/sao_roque.html"
+            class="card-link"
+          >
+            <article
+              id="card-sao-roque"
+              class="card-destino"
+              data-ida="2025-12-19"
+              data-volta="2025-12-21"
+              data-preco="R$ 200,00"
+            >
+              <img
+                class="card-img"
+                src="https://naturam.com.br/wp-content/uploads/2021/03/6-vila-don-patto-sao-roque.jpg"
+                alt="São Roque"
+              />
+              <div class="card-content card-content-sao-roque">
+                <h3 class="card-title">São Roque</h3>
+                <p class="card-text">
+                  Roteiros de vinho, gastronomia e paisagens naturais.
+                </p>
+                <p id="ida-11" class="card-info">Ida: 19/12/2025</p>
+                <p id="volta-11" class="card-info">Volta: 21/12/2025</p>
+                <p id="preço-11" class="card-preco">Valor: R$ 200,00</p>
+              </div>
+            </article>
+          </a>
+
+          <!-- Cananeia -->
+          <a href="../offers-details/cananeia/cananeia.html" class="card-link">
+            <article
+              id="card-cananeia"
+              class="card-destino"
+              data-ida="2025-12-20"
+              data-volta="2025-12-24"
+              data-preco="R$ 310,00"
+            >
+              <img
+                class="card-img"
+                src="https://viajeibrasil.com/wp-content/uploads/2024/05/cachoeiras-de-cananeia.webp"
+                alt="Cananeia"
+              />
+              <div class="card-content card-content-cananeia">
+                <h3 class="card-title">Cananeia</h3>
+                <p class="card-text">
+                  Centro histórico, biodiversidade e acesso à Ilha do Cardoso.
+                </p>
+                <p id="ida-12" class="card-info">Ida: 20/12/2025</p>
+                <p id="volta-12" class="card-info">Volta: 24/12/2025</p>
+                <p id="preço-12" class="card-preco">Valor: R$ 310,00</p>
+              </div>
+            </article>
+          </a>
+        </section>
+      </section>
+    </main>
+    <footer>
+      <p>
+        Copyright © Sem Parada |
+        <a target="_blank" href="https://www.sp.senac.br/"
+          >Centro Universitário Senac</a
+        >
+        |
+        <a href="../about-us/about-us.html">Sobre nós</a>
+      </p>
+    </footer>
+    <script type="module" src="../../global/global/global.js"></script>
+    <script src="./offers.js"></script>
+  </body>
+</html>

@@ -1,0 +1,351 @@
+main {
+  display: flex;
+  margin: 0;
+  padding: 1rem;
+  min-height: 90vh;
+  flex-direction: column;
+  background-color: #f0f2f5;
+}
+
+main h1 {
+  text-align: center;
+  color: #044c92;
+  margin-top: 20px;
+}
+
+img {
+  width: 20%;
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-bottom: 2%;
+  margin-top: 2%;
+}
+
+#perfil {
+  /* ESSE PERFIL É O NOME*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  color: #0056b3;
+  margin-top: 20px;
+}
+
+.container {
+  display: flex;
+  gap: 40px;
+  /* Espaço entre o ônibus e o resumo */
+  margin-top: 30px;
+  flex-wrap: wrap;
+  /* Permite que os itens quebrem linha em telas menores, já tô considerando a responsividade */
+  justify-content: center;
+}
+
+.resumo-compra {
+  text-align: center; /*centralizei "Sua Seleção" e "Total"*/
+}
+.li {
+  text-align: center; /*centralizei "Nenhum assento selecionado"*/
+}
+#assentos-selecionados {
+  color: #044c92; /*troquei a cor pra combinar com o tema*/
+}
+
+.onibus-container {
+  border: 2px solid #555;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.onibus-frente {
+  width: 80px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 5px 5px 0 0; /*arredonda as bordas de "frente e fundo"*/
+  margin: 0 auto 15px auto;
+  text-align: center;
+  line-height: 30px;
+  font-size: 0.8em;
+  color: #666; /*fonte de "frente e fundo"*/
+  border: 1px solid #999;
+  margin-top: 2px; /*A distância entre a linha da margem do busão com o botão "frente"*/
+}
+
+.corredor-divisor {
+  width: 100%;
+  height: 5px;
+  background-color: #eee;
+  margin: 15px 0;
+  border-radius: 2px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.fileira {
+  display: flex;
+  justify-content: space-between; /* Mantém os grupos de assentos separados pelo corredor */
+  margin-bottom: 10px; /*distância entre as fileiras de cima pra baixo*/
+  gap: 20px; /* Espaço para o corredor */
+}
+
+.grupo-assentos {
+  display: flex;
+  gap: 5px; /* Espaço entre assentos na mesma fileira */
+}
+
+.assento {
+  width: 40px;
+  height: 40px;
+  background-color: #044c92;
+  /* Cor azul claro para disponível */
+  border: 1px solid #7bc0e9;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.9em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+/* ESTADOS DOS ASSENTOS */
+.assento.ocupado {
+  background-color: #858f8e;
+  /* Cinza para ocupado */
+  border-color: #777;
+  cursor: not-allowed;
+  color: #000; /*nos outros casos, coloquei o color branco. Neste caso, acho mais bonito o preto*/
+  /*aqui é a cor da letra*/
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15);
+  opacity: 0.8;
+}
+
+.assento.selecionado {
+  background-color: #774f9e;
+  border-color: #9a7bc0;
+  color: white;
+  transform: scale(1.05);
+  /* Pequena animação */
+}
+
+.assento:not(.ocupado):hover {
+  background-color: #6cc1ef; /*quando passar o mouse sobre o que está disponível, fica azul clarinho*/
+  transform: scale(1.03);
+}
+
+.assento.selecionado:hover {
+  background-color: #5e3f7e; /*selecionei mas ainda não comprei*/
+}
+
+/* === legenda ===*/
+.legenda {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.legenda-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9em;
+  color: #555; /*achei mais sutil o cinza do que o preto*/
+}
+
+.legenda-cor {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  border: 1px solid #ccc; /*a bordinha dos quadradinhos de cores*/
+}
+
+.legenda-disponivel {
+  background-color: #044c92;
+}
+
+.legenda-selecionado {
+  background-color: #5e3f7e;
+}
+
+.legenda-ocupado {
+  background-color: #858f8e;
+}
+
+/* ================================================= */
+/* RESUMO DA SELEÇÃO E BOTÕES                        */
+/* ================================================= */
+.resumo-compra {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  /* Largura fixa para o resumo */
+  box-sizing: border-box;
+  /* Inclui padding e border na largura */
+}
+
+.resumo-compra h2 {
+  color: #044c92;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+#assentos-selecionados {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 15px;
+  max-height: 150px;
+  overflow-y: auto; /*Quando selecionar o 4º assento, já vai acionar o scroll*/
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+}
+
+#assentos-selecionados li {
+  background-color: #e6f7ff;
+  border-left: 3px solid #007bff;
+  padding: 8px 10px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#assentos-selecionados li span {
+  font-weight: bold;
+}
+
+#assentos-selecionados li button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 4px 8px;
+  font-size: 0.8em;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#assentos-selecionados li button:hover {
+  background-color: #c82333;
+}
+
+#total-valor {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.botoes-acao {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  flex-grow: 1;
+  /* Faz os botões ocuparem o espaço disponível */
+}
+
+.btn-prosseguir {
+  background-color: #044c92;
+  color: white;
+}
+
+.btn-prosseguir:hover {
+  background-color: #033974;
+  transform: translateY(-2px);
+}
+
+.btn-limpar {
+  background-color: #6c757d;
+  color: white;
+}
+
+.btn-limpar:hover {
+  background-color: #5a6268;
+  transform: translateY(-2px);
+}
+
+footer {
+  width: 100%;
+  padding: 1rem;
+  margin: 0;
+  text-align: center;
+  background-color: #044c92;
+  color: #ffffff;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+}
+
+footer p {
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+/* ================================================= */
+/*                  RESPONSIVIDADE                   */
+/* ================================================= */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .onibus-container,
+  .resumo-compra {
+    width: 90%;
+    /* Ajusta a largura em telas menores */
+    max-width: 400px;
+    /* Limita a largura máxima */
+  }
+
+  .fileira {
+    gap: 10px;
+    /* Reduz o espaço do corredor */
+  }
+
+  .assento {
+    width: 35px;
+    height: 35px;
+    font-size: 0.8em;
+  }
+
+  header {
+    flex-direction: column; /* Empilha h1 em cima de nav */
+    justify-content: center; /* Centraliza o conteúdo */
+    align-items: center; /* Centraliza o conteúdo */
+    text-align: center;
+  }
+
+  .menu {
+    margin-top: 10px; /* Espaçamento entre o título e o menu */
+    flex-wrap: wrap; /* Permite que os links quebrem a linha se necessário */
+    justify-content: center;
+  }
+  footer {
+    padding: 10px 3%; /* Reduzir um pouco o padding em telas menores */
+    font-size: 0.9em; /* Reduzir um pouco a fonte */
+  }
+}

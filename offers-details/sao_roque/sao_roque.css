@@ -1,0 +1,98 @@
+body {
+  background-image: url(https://emalgumlugardomundo.com.br/wp-content/uploads/2021/05/o-que-fazer-em-sao-roque-9.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#main_image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#main_image img {
+  width: 180px;
+}
+
+#boas_vindas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1%;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: #044c92;
+  background-color: #f7fdff1c;
+  backdrop-filter: blur(50px);
+  transition: background-color 0.5s ease;
+  border: 0.1px solid #f7fdff3a;
+  border-radius: 20px;
+}
+
+#boas_vindas:hover {
+  background-color: #f7fdff42;
+}
+
+#boas_vindas h1 {
+  margin: 5%;
+  font-size: 350%;
+}
+
+#boas_vindas h2 {
+  margin: 5%;
+  color: black;
+  font-size: 150%;
+}
+
+#boas_vindas p {
+  margin: 5%;
+  display: flex;
+  color: black;
+  font-size: 130%;
+}
+
+#boas_vindas img {
+  margin: 1%;
+  width: 50%;
+  height: auto;
+  border: 0.1px solid #f7fdff3a;
+  border-radius: 20px;
+}
+
+.main_texts {
+  flex: 1;
+  padding: 20px;
+}
+
+.botoes {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5%;
+}
+
+.botoes button {
+  font-size: 100%;
+  font-weight: bold;
+  background-color: #044c92;
+  color: #f7fdff;
+  margin-left: 3%;
+  margin-right: 3%;
+  padding: 1%;
+  border: none;
+  box-shadow: none;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.botoes button:hover {
+  background-color: #774f9e;
+}
+
+.botoes button a {
+  font-size: 120%;
+  font-weight: bold;
+  color: #f7fdff;
+  text-decoration: none;
+}

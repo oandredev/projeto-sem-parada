@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../global/global/global.css" />
+    <link rel="stylesheet" href="../global/header/header.css" />
+    <link rel="stylesheet" href="../global/footer/footer.css" />
+
+    <link rel="stylesheet" href="./seat-selection.css" />
+
+    <title>SEM PARADA | SELEÇÃO DE ASSENTOS</title>
+  </head>
+  <body>
+    <div class="fake-header"></div>
+    <header>
+      <a class="logo-area" href="/">
+        <img src="../public/logo/logo.png" alt="Logo Sem Parada" />
+        <h1>Sem Parada</h1>
+      </a>
+
+      <nav class="menu">
+        <a href="../offers/offers.html">PASSAGENS</a>
+        <a href="../history/history.html">HISTÓRICO</a>
+        <a href="../about-us/about-us.html">SOBRE NÓS</a>
+      </nav>
+
+      <div class="account-container">
+        <a id="createAccount" href="../signin/signin.html"> CRIAR CONTA </a>
+        <a id="joinInAccount" href="../login/login.html"> ENTRAR </a>
+      </div>
+
+      <div class="user-menu-container" style="display: none">
+        <button id="usernameH">
+          <span id="username1" class="username username-btn"
+            >Nome do Usuário</span
+          >
+          <span class="arrow-down">▼</span>
+        </button>
+
+        <div id="userDropdown" class="user-menu-dropdown">
+          <div class="user-info">
+            <div id="username2" class="username username-dd">NAME</div>
+            <div id="emailUser" class="email email-dd">name@gmail.com</div>
+          </div>
+
+          <hr class="separator" />
+
+          <button id="logoutButton" class="menu-item logout-button">
+            Sair
+          </button>
+        </div>
+      </div>
+    </header>
+    <main>
+      <h1>Reservas de Passagens</h1>
+      <h2>São Paulo - Guarujá</h2>
+
+      <div class="container">
+        <div class="onibus-container">
+          <div class="onibus-frente">FRENTE</div>
+
+          <div id="mapa-assentos"></div>
+
+          <div class="onibus-frente">FUNDO</div>
+        </div>
+
+        <div class="resumo-compra">
+          <h2>Sua Seleção</h2>
+          <ul id="assentos-selecionados">
+            <li>Nenhum assento selecionado</li>
+          </ul>
+          <p id="total-valor">Subtotal: R$ 0.00</p>
+          <div class="botoes-acao">
+            <button class="btn btn-prosseguir" id="btn-finalizar-compra">
+              Prosseguir
+            </button>
+            <button class="btn btn-limpar" id="btn-limpar-selecao">
+              Limpar Seleção
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="legenda">
+        <div class="legenda-item">
+          <div class="legenda-cor legenda-disponivel"></div>
+          <span>Disponível</span>
+        </div>
+        <div class="legenda-item">
+          <div class="legenda-cor legenda-selecionado"></div>
+          <span>Selecionado</span>
+        </div>
+        <div class="legenda-item">
+          <div class="legenda-cor legenda-ocupado"></div>
+          <span>Ocupado</span>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>
+        Copyright © Sem Parada |
+        <a target="_blank" href="https://www.sp.senac.br/"
+          >Centro Universitário Senac</a
+        >
+        |
+        <a href="../about-us/about-us.html">Sobre nós</a>
+      </p>
+    </footer>
+    <script type="module" src="../global/global/global.js"></script>
+    <script src="./seat-selection.js"></script>
+  </body>
+</html>
