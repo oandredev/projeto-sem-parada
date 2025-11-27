@@ -1,4 +1,8 @@
-import { getOfferSelectionByUser } from "../services/cartService/cartService.js";
+import {
+  getOfferSelectionByUser,
+  saveSeatsSelection,
+  getSeatsSelectionByUser,
+} from "../services/cartService/cartService.js";
 
 const offerSelected = getOfferSelectionByUser();
 
@@ -15,11 +19,24 @@ const ASSENTOS_INICIAIS_OCUPADOS = offerSelected?.assentosOcupados ?? [];
 const mapaAssentosDiv = document.getElementById("mapa-assentos");
 const assentosSelecionadosUl = document.getElementById("assentos-selecionados");
 const totalValorSpan = document.getElementById("total-valor");
-const btnFinalizarCompra = document.getElementById("btn-finalizar-compra");
+const btnProsseguir = document.getElementById("btn-prosseguir");
 const btnLimparSelecao = document.getElementById("btn-limpar-selecao");
 
 let assentosAtualmenteSelecionados = []; // Armazena os IDs dos assentos selecionados
 let precoTotal = 0;
+
+function atualizarAssentosSelecionados() {
+  assentosAtualmenteSelecionados = getSeatsSelectionByUser();
+
+  for (const id of assentosAtualmenteSelecionados) {
+    const assento = document.querySelector(`.assento[data-id="${id}"]`);
+    if (assento && !assento.classList.contains("ocupado")) {
+      assento.classList.add("selecionado");
+    }
+  }
+
+  atualizarResumoCompra();
+}
 
 // FUNÇÕES PRINCIPAIS
 
@@ -154,20 +171,23 @@ function atualizarResumoCompra() {
 /**
  * Simula a finalização da compra: marca os assentos como ocupados.
  */
-function finalizarCompra() {
+function prosseguirComCompra() {
   if (assentosAtualmenteSelecionados.length === 0) {
-    alert("Por favor, selecione ao menos um assento para finalizar a compra.");
+    alert("Por favor, selecione ao menos um assento para prosseguir.");
     return;
   }
 
-  const confirmacao = confirm(
+  saveSeatsSelection(assentosAtualmenteSelecionados);
+
+  /* Desabilitado 
+    const confirmacao = confirm(
     `Deseja realmente comprar ${
       assentosAtualmenteSelecionados.length
     } assento(s) por R$ ${precoTotal.toFixed(2).replace(".", ",")}?`
   );
 
   if (confirmacao) {
-    assentosAtualmenteSelecionados.forEach((id) => {
+      assentosAtualmenteSelecionados.forEach((id) => {
       const assentoElement = document.querySelector(
         `.assento[data-id="${id}"]`
       );
@@ -183,7 +203,7 @@ function finalizarCompra() {
     assentosAtualmenteSelecionados = []; // Limpa a lista de selecionados
     atualizarResumoCompra(); // Atualiza o resumo
     // Em um sistema real, aqui você enviaria os dados para o backend
-  }
+    */
 }
 
 /**
@@ -215,10 +235,11 @@ function limparSelecao() {
 
 document.addEventListener("DOMContentLoaded", () => {
   gerarMapaAssentos();
+  atualizarAssentosSelecionados();
   atualizarResumoCompra(); // Garante que o resumo inicial esteja correto
 
   // Adiciona eventos aos botões de ação
-  btnFinalizarCompra.addEventListener("click", finalizarCompra);
+  btnProsseguir.addEventListener("click", prosseguirComCompra);
   btnLimparSelecao.addEventListener("click", limparSelecao);
 });
 

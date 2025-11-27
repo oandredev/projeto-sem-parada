@@ -287,22 +287,6 @@ h1 {
   transform: translateY(-2px);
 }
 
-footer {
-  width: 100%;
-  padding: 1rem;
-  margin: 0;
-  text-align: center;
-  background-color: #044c92;
-  color: #ffffff;
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
-}
-
-footer p {
-  font-size: 0.8rem;
-  font-weight: bold;
-  margin: 0;
-}
-
 /* ================================================= */
 /*                  RESPONSIVIDADE                   */
 /* ================================================= */
@@ -330,22 +314,5 @@ footer p {
     width: 35px;
     height: 35px;
     font-size: 0.8em;
-  }
-
-  header {
-    flex-direction: column; /* Empilha h1 em cima de nav */
-    justify-content: center; /* Centraliza o conteúdo */
-    align-items: center; /* Centraliza o conteúdo */
-    text-align: center;
-  }
-
-  .menu {
-    margin-top: 10px; /* Espaçamento entre o título e o menu */
-    flex-wrap: wrap; /* Permite que os links quebrem a linha se necessário */
-    justify-content: center;
-  }
-  footer {
-    padding: 10px 3%; /* Reduzir um pouco o padding em telas menores */
-    font-size: 0.9em; /* Reduzir um pouco a fonte */
   }
 }
