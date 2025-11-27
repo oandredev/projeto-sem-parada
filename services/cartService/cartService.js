@@ -26,11 +26,23 @@ export function saveOfferSelection(offerId) {
 
   localStorage.setItem("carts", JSON.stringify(carts));
 
-  window.location.href = "/cart/cart.html";
+  window.location.href = "/seat-selection/seat-selection.html";
 }
 
-export function getOfferSelection(idOffer) {
+function getOfferSelection(idOffer) {
   const viagens = JSON.parse(localStorage.getItem("viagens")) || [];
   const id = Number(idOffer); // converte sempre para number
   return viagens.find((offer) => offer.id == id) || null;
+}
+
+export function getOfferSelectionByUser() {
+  // Pega salva pelo usuário logado
+  const loggedUser = getLoggedUser();
+  if (!loggedUser) return null;
+
+  // Busca o carrinho do usuário logado
+  const carts = JSON.parse(localStorage.getItem("carts")) || [];
+  const cart = carts.find((item) => item.userId === loggedUser.id);
+
+  return cart?.offer ?? null;
 }

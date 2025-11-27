@@ -1,13 +1,16 @@
+import { getOfferSelectionByUser } from "../services/cartService/cartService.js";
+
+const offerSelected = getOfferSelectionByUser();
+
 // CONFIGURANDO O MAPA E O PREÇO DOS ASSENTOS
 const NUM_FILEIRAS = 8; // Número de fileiras no ônibus
 const ASSENTOS_POR_FILEIRA = 4; // Total de assentos por fileira (ex: A, B, C, D)
 const ASSENTOS_CORREDOR_ESQ = 2; // Quantos assentos antes do corredor (ex: A, B)
-const PRECO_ASSENTO_UNITARIO = 50.0; // Preço de cada assento
+const PRECO_ASSENTO_UNITARIO = Number(offerSelected?.valorPassagem) || 0; // Preço de cada assento
 
-// Array para simular assentos inicialmente ocupados (ex: já comprados)
-const ASSENTOS_INICIAIS_OCUPADOS = ["1C", "2A", "5A", "5B", "8C"];
+const ASSENTOS_INICIAIS_OCUPADOS = offerSelected?.assentosOcupados ?? [];
 
-// VARIÁVEIS GLOBAIS E ELEMENTOS DO DOM              */
+// VARIÁVEIS GLOBAIS E ELEMENTOS DO DOM*/
 
 const mapaAssentosDiv = document.getElementById("mapa-assentos");
 const assentosSelecionadosUl = document.getElementById("assentos-selecionados");
@@ -218,3 +221,6 @@ document.addEventListener("DOMContentLoaded", () => {
   btnFinalizarCompra.addEventListener("click", finalizarCompra);
   btnLimparSelecao.addEventListener("click", limparSelecao);
 });
+
+// Torna a função global para uso nos botões gerados dinamicamente
+window.removerAssentoDaSelecao = removerAssentoDaSelecao;

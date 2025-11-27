@@ -2,7 +2,7 @@ const viagens = [
   {
     id: "1",
     destino: "São Paulo/SP",
-    valorPassagem: "R$ 250,00",
+    valorPassagem: "250.00",
     tipo: "IDA e VOLTA",
     cidades: ["São Paulo/SP"],
     imagensBase: [
@@ -27,7 +27,7 @@ const viagens = [
   {
     id: "2",
     destino: "Campos do Jordão/SP",
-    valorPassagem: "R$ 320,00",
+    valorPassagem: "320.00",
     tipo: "IDA e VOLTA",
     cidades: ["São Paulo/SP", "Campos do Jordão/SP"],
     imagensBase: [
@@ -52,7 +52,7 @@ const viagens = [
   {
     id: "3",
     destino: "Brotas/SP",
-    valorPassagem: "R$ 280,00",
+    valorPassagem: "280.00",
     tipo: "IDA e VOLTA",
     cidades: ["São Paulo/SP", "Brotas/SP"],
     imagensBase: [
@@ -77,7 +77,7 @@ const viagens = [
   {
     id: "4",
     destino: "Holambra/SP",
-    valorPassagem: "R$ 190,00",
+    valorPassagem: "190.00",
     tipo: "IDA e VOLTA",
     cidades: ["São Paulo/SP", "Holambra/SP"],
     imagensBase: ["https://static.ndmais.com.br/2025/06/holambra-1.jpg"],
@@ -100,7 +100,7 @@ const viagens = [
   {
     id: "5",
     destino: "Aparecida/SP",
-    valorPassagem: "R$ 170,00",
+    valorPassagem: "170.00",
     tipo: "IDA e VOLTA",
     cidades: ["São Paulo/SP", "Aparecida/SP"],
     imagensBase: [
@@ -125,7 +125,7 @@ const viagens = [
   {
     id: "6",
     destino: "Guarujá/SP",
-    valorPassagem: "R$ 230,00",
+    valorPassagem: "230.00",
     tipo: "IDA e VOLTA",
     cidades: ["São Paulo/SP", "Guarujá/SP"],
     imagensBase: [
@@ -150,7 +150,7 @@ const viagens = [
   {
     id: "7",
     destino: "Ilhabela/SP",
-    valorPassagem: "R$ 360,00",
+    valorPassagem: "360.00",
     tipo: "IDA e VOLTA",
     cidades: ["São Paulo/SP", "Ilhabela/SP"],
     imagensBase: [
@@ -175,7 +175,7 @@ const viagens = [
   {
     id: "8",
     destino: "Ubatuba/SP",
-    valorPassagem: "R$ 340,00",
+    valorPassagem: "340.00",
     tipo: "IDA e VOLTA",
     cidades: ["São Paulo/SP", "Ubatuba/SP"],
     imagensBase: [
@@ -200,7 +200,7 @@ const viagens = [
   {
     id: "9",
     destino: "Santos/SP",
-    valorPassagem: "R$ 210,00",
+    valorPassagem: "210.00",
     tipo: "IDA e VOLTA",
     cidades: ["São Paulo/SP", "Santos/SP"],
     imagensBase: [
@@ -225,7 +225,7 @@ const viagens = [
   {
     id: "10",
     destino: "Serra da Mantiqueira/SP",
-    valorPassagem: "R$ 390,00",
+    valorPassagem: "390.00",
     tipo: "IDA e VOLTA",
     cidades: ["São Paulo/SP", "Serra da Mantiqueira/SP"],
     imagensBase: [
@@ -250,7 +250,7 @@ const viagens = [
   {
     id: "11",
     destino: "São Roque/SP",
-    valorPassagem: "R$ 200,00",
+    valorPassagem: "200.00",
     tipo: "IDA e VOLTA",
     cidades: ["São Paulo/SP", "São Roque/SP"],
     imagensBase: [
@@ -275,7 +275,7 @@ const viagens = [
   {
     id: "12",
     destino: "Cananeia/SP",
-    valorPassagem: "R$ 310,00",
+    valorPassagem: "310.00",
     tipo: "IDA e VOLTA",
     cidades: ["São Paulo/SP", "Cananeia/SP"],
     imagensBase: [
