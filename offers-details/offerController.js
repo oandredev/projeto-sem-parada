@@ -6,3 +6,4 @@ export function trySaveOfferSelection(offerId) {
 }
 
 window.trySaveOfferSelection = trySaveOfferSelection;
+

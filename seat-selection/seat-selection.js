@@ -178,32 +178,6 @@ function prosseguirComCompra() {
   }
 
   saveSeatsSelection(assentosAtualmenteSelecionados);
-
-  /* Desabilitado 
-    const confirmacao = confirm(
-    `Deseja realmente comprar ${
-      assentosAtualmenteSelecionados.length
-    } assento(s) por R$ ${precoTotal.toFixed(2).replace(".", ",")}?`
-  );
-
-  if (confirmacao) {
-      assentosAtualmenteSelecionados.forEach((id) => {
-      const assentoElement = document.querySelector(
-        `.assento[data-id="${id}"]`
-      );
-      if (assentoElement) {
-        assentoElement.classList.remove("selecionado"); // Remove seleção
-        assentoElement.classList.add("ocupado"); // Marca como ocupado
-        // Remove o event listener para que não possa ser clicado novamente
-        assentoElement.removeEventListener("click", () => toggleAssento(id));
-      }
-    });
-
-    alert("Compra finalizada com sucesso! Seus assentos foram reservados!");
-    assentosAtualmenteSelecionados = []; // Limpa a lista de selecionados
-    atualizarResumoCompra(); // Atualiza o resumo
-    // Em um sistema real, aqui você enviaria os dados para o backend
-    */
 }
 
 /**
