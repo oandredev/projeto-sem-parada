@@ -1,60 +1,160 @@
-#boas_vindas {
-  margin-left: 7%;
-  margin-right: 7%;
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+.history-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background: linear-gradient(#044c92, #012447); 
+    padding: 15px 20px;
+    border-radius: 8px 8px 0 0;
+    text-align: center;
+}
+
+.card-header h2 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.card-header p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #eeeeee;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.detail-group {
+    padding-left: 1rem;
+    border-bottom: 1px dashed #eee;
+    margin-bottom: 1rem;
+}
+
+.detail-group p {
+    margin: 5px 0;
+}
+
+/* --- Tabela de Itens (Itinerários) --- */
+.cart-table {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.cart-row {
+    /* Ajuste as colunas para Trecho/Passageiro, Assento, Valor */
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr; 
+    padding: 0.5rem 0.5rem;
+    margin: 0;
+    align-items: center;
+}
+
+.header-row {
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: #7f8284;
+    border-radius: 6px;
+    margin-top: 0.2rem;
+    padding: 1rem;
+}
+
+.item-row {
+    border-bottom: 1px solid #eee;
+}
+
+.item-row:last-child {
+    border-bottom: none;
+}
+
+.col-item {
+    text-align: left;
+    font-weight: 500;
+    padding-left: 0.5rem;
+}
+
+.cart-row.header-row span,
+.cart-row.item-row span:not(:first-child) {
+    text-align: center;
+}
+
+.customization-details {
+    display: block;
+    font-size: 12px;
+    color: #888;
+    margin-top: 5px;
+}
+
+.col-seat,
+.col-value-base {
+    text-align: center;
+}
+
+/* --- Rodapé do Card do Histórico (aquela parte do Total) --- */
+.card-footer {
+    background: linear-gradient(#044c92, #012447);  
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-top: 1px solid #ddd;
+    border-radius: 0 0 8px 8px;
+}
+
+.card-footer p {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.total-amount {
+    color: white;
+}
+
+
+footer {
+  padding: 0.5rem;
+  margin: 0;
   text-align: center;
-  color: #044c92;
+  background: linear-gradient(#044c92, #012447);
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+  margin-top: auto;
 }
 
-#boas_vindas h1 {
-  margin-bottom: 5%;
-  margin-top: 0%;
-  font-size: 350%;
+footer p {
+  font-size: 0.8rem;
+  margin: 0;
+  color: white;
 }
 
-#boas_vindas h2 {
-  margin: 3%;
-  color: black;
-  font-size: 150%;
-}
-
-#boas_vindas p {
-  color: black;
-  font-size: 130%;
-}
-
-.main_creators_images {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.main_creators_images a {
-  display: inline-block;
+footer a {
   text-decoration: none;
+  color: white;
 }
 
-.main_creators_images a img {
-  width: 70%;
-  margin-left: 0%;
-  margin-right: 0%;
-  margin-bottom: 0%;
-  padding: 0%;
-  border-radius: 50%;
-  object-fit: cover;
-  transition: transform 0.3s ease;
-  transform: scale(1);
+footer a:hover {
+  text-decoration: underline;
 }
 
-.main_creators_images a img:hover {
-  transform: scale(1.1);
-}
-
-.main_creators_images a p {
-  font-size: 120% !important;
-  font-weight: bold;
-  color: #044c92 !important;
-}
-
-.main_creators_images a p:hover {
-  color: #774f9e !important;
-}
