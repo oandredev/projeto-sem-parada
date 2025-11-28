@@ -1,64 +1,65 @@
 #parabens {
-    margin-left: 7%;
-    margin-right: 7%;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    color: #044C92;
+  margin-left: 7%;
+  margin-right: 7%;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: #044c92;
 }
 
-#parabens h1 { 
-    margin-top: 5%;
-    margin-bottom: 1%;
-    font-size: 350%;
+#parabens h1 {
+  margin-top: 5%;
+  margin-bottom: 1%;
+  font-size: 350%;
 }
 
 #parabens h2 {
-    margin-bottom: 2%;
-    color: black;
-    font-size: 150%;
+  margin-bottom: 2%;
+  color: black;
+  font-size: 150%;
 }
 
 #parabens h2 a {
-    color: #044C92;
+  color: #044c92;
 }
 
 #parabens p {
-    color: black;
-    font-size: 130%;
+  color: black;
+  font-size: 130%;
 }
 
-#parabens #viajante, #motorista {
-    width: 200px;
-    margin-top: 0%;
+#parabens #viajante,
+#motorista {
+  width: 200px;
+  margin-top: 0%;
 }
 
 .botoes {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5%;
 }
 
 .botoes button {
-    font-size: 100%;
-    font-weight: bold;
-    background-color: #044C92;
-    color: #F7FDFF;
-    margin-left: 3%;
-    margin-right: 3%;
-    padding: 1%;
-    border: none;
-    box-shadow: none;
-    border-radius: 10px;
+  font-size: 100%;
+  font-weight: bold;
+  background-color: #044c92;
+  color: #f7fdff;
+  margin-left: 3%;
+  margin-right: 3%;
+  padding: 1%;
+  border: none;
+  box-shadow: none;
+  border-radius: 10px;
 }
 
 .botoes button:hover {
-    background-color: #774F9E;
+  background-color: #774f9e;
 }
 
 .botoes button a {
-    font-size: 100%;
-    font-weight: bold;
-    color: #F7FDFF;
-    text-decoration: none;
+  font-size: 100%;
+  font-weight: bold;
+  color: #f7fdff;
+  text-decoration: none;
 }

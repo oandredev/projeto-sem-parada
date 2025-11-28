@@ -108,9 +108,11 @@ function formatCPF(raw) {
 }
 
 function CPFIsValid(cpfRef) {
+  /* Deixa apenas números  */
   const cpf = cpfRef.replace(/\D/g, "");
   let isValid = true;
 
+  /* Evita CPF com todos os dígitos iguais */
   if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) isValid = false;
 
   if (isValid) {
