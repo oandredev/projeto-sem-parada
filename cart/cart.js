@@ -317,8 +317,10 @@ function finalizePurchase() {
   )?.value;
 
   const data = collectFormData();
+  const seatsList = data.passengers.map((p) => p.seat);
 
   savePurchase(data);
+  updateSeatsLockeds(seatsList);
 
   finishBtn.disabled = true;
   finishBtn.textContent = "Processando...";
@@ -344,4 +346,26 @@ function savePurchase(data) {
   history.push(data);
 
   localStorage.setItem("history", JSON.stringify(history));
+}
+
+function updateSeatsLockeds(newSeatsLocked) {
+  const viagens = JSON.parse(localStorage.getItem("viagens")) || [];
+
+  const tripIndex = viagens.findIndex(
+    (v) => v.id === String(offerSelection.id)
+  );
+
+  if (tripIndex !== -1) {
+    const currentOccupied = viagens[tripIndex].assentosOcupados || [];
+
+    viagens[tripIndex].assentosOcupados = [
+      ...currentOccupied,
+      ...newSeatsLocked,
+    ];
+    localStorage.setItem("viagens", JSON.stringify(viagens));
+
+    console.log("Assentos atualizados:", viagens[tripIndex].assentosOcupados);
+  } else {
+    console.error("Viagem não encontrada para atualização de assentos.");
+  }
 }
