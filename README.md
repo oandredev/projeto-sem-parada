@@ -18,25 +18,21 @@ O desafio era criar tudo na unha: apenas <b>HTML, CSS, JavaScript puro e LocalSt
 ## Principais Recursos Desenvolvidos:
 
 - <b>Autenticação completa</b>
-
   - Cadastro
   - Login
   - Persistência local de dados
 
 - <b>Reserva de passagens</b>
-
-  - Seleção de ofertas
   - Escolha de destinos
-
+  - Seleção de assentos
+    
 - <b>Validação de dados</b>
-
   - Nome
   - CPF
   - Email
   - Senha
 
 - <b>Sistema de seleção de assentos</b>
-
   - Assentos ocupados
   - Assentos disponíveis
   - Assentos já escolhidos pelo usuário
