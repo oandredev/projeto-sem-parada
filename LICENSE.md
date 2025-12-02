@@ -1,6 +1,6 @@
 # Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0)
 
-Copyright (c) [ano] [seu nome]
+Copyright (c) [2025]
 
 ## PT-BR
 
