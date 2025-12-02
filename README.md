@@ -26,7 +26,7 @@ O desafio era criar tudo na unha: apenas <b>HTML, CSS, JavaScript puro e LocalSt
 - <b>Reserva de passagens</b>
 
   - Seleção de ofertas
-  - Escolha de datas e destinos
+  - Escolha de destinos
 
 - <b>Validação de dados</b>
 
