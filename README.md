@@ -1,4 +1,4 @@
-# Projeto – Sem Parada
+# Projeto – Sem Parada <img src="./public/logo/logo_cut.png" width="150" >
 
 Aplicação web desenvolvida em grupo como requisito da disciplina de <b>Programação Web</b> do curso de <b>TADS – Senac.</b>
 
@@ -47,7 +47,7 @@ O desafio era criar tudo na unha: apenas <b>HTML, CSS, JavaScript puro e LocalSt
 
 ## Resumo
 
-O projeto entrega uma experiência funcional simulando um sistema real de compra de passagens, demonstrando domínio dos fundamentos da Web sem apoio de tecnologias adicionais. O foco foi provar entendimento de fluxo de dados, validação, manipulação de DOM, usabilidade e persistência local.
+O projeto entrega uma experiência funcional simulando um sistema real de compra de passagens, demonstrando domínio dos fundamentos da Web sem apoio de tecnologias adicionais. O foco foi provar entendimento de <b>fluxo de dados, validação, manipulação de DOM, usabilidade e persistência local</b>.
 
 ## 📸 Exemplos Visuais
 
