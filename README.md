@@ -1,4 +1,4 @@
-# Projeto – Sem Parada <img src="./public/logo/logo_cut.png" width="150" >
+# Projeto – Sem Parada ......<img src="./public/logo/logo_cut.png" height="25" >......
 
 Aplicação web desenvolvida em grupo como requisito da disciplina de <b>Programação Web</b> do curso de <b>TADS – Senac.</b>
 
