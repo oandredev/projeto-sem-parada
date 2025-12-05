@@ -71,20 +71,31 @@ body {
 }
 
 .botoes button {
-  font-size: 100%;
+  background: #044c92;
+  color: #fff;
   font-weight: bold;
-  background-color: #044c92;
-  color: #f7fdff;
-  margin-left: 3%;
-  margin-right: 3%;
-  padding: 1%;
+  margin: 0;
+  margin-top: 1rem;
+  padding: 1rem 1.5rem;
   border: none;
-  box-shadow: none;
-  border-radius: 10px;
-  transition: background-color 0.3s ease;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 1;
+  transform: scale(0.98);
+  transition: 0.3s ease;
 }
 
-.botoes button:hover {
-  background-color: #774f9e;
-  cursor: pointer;
+.botoes button:disabled {
+  transform: scale(0.96);
+  opacity: 0.5;
+}
+
+.botoes button:enabled:hover {
+  background: #774f9e;
+  transform: scale(1);
+}
+
+.botoes button:enabled:active {
+  transform: scale(0.96);
+  background: #492969;
 }

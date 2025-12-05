@@ -222,16 +222,17 @@ header {
 
 @media (max-width: 1150px) {
   header {
-  position: relative;
-  display: block;
-  background: #044c92;
-  width: 100%;
-  max-height: 40%;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-  position: fixed;
+    position: relative;
+    display: block;
+    background: #044c92;
+    width: 100%;
+    max-height: 40%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    position: fixed;
   }
 
-  .menu, .account-container {
+  .menu,
+  .account-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -239,12 +240,12 @@ header {
     margin-bottom: 10%;
   }
 
-  .menu a, .account-container a {
+  .menu a,
+  .account-container a {
     font-size: 85%;
   }
 
   .account-container a {
     background-color: #044c92;
   }
-
 }

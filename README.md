@@ -1,6 +1,24 @@
-# Projeto – Sem Parada .....<img src="./public/logo/logo_cut.png" height="25" >
+# Projeto – Sem Parada .....
 
 Aplicação web desenvolvida em grupo como requisito da disciplina de <b>Programação Web</b> do curso de <b>TADS – Senac.</b>
+
+<a href="https://sem-parada.vercel.app"
+   target="_blank"
+   rel="noopener noreferrer"
+   style="
+     background:#044c92;
+     color:#fff;
+     padding:0.5rem 0.8rem;
+     display:inline-flex;
+     align-items:center;
+     gap:0.5rem;
+     border-radius:8px;
+     text-decoration:none;
+     font-weight:600;
+   ">
+<img src="./public/logo/logo_cut.png" height="20" style="display:block;">
+<span>Testar <strong>➚</strong></span>
+</a>
 
 ## Integrantes:
 
@@ -108,3 +126,25 @@ Veja algumas das telas desenvolvidas:
 <p>
   <img src="./prints_gifs/reserva-2.png" style="border-radius:12px; border: solid 3px #044c92" />
 </p>
+
+<hr>
+
+### O projeto está disponível ONLINE, teste agora mesmo:
+
+<a href="https://sem-parada.vercel.app"
+   target="_blank"
+   rel="noopener noreferrer"
+   style="
+     background:#044c92;
+     color:#fff;
+     padding:0.5rem 0.8rem;
+     display:inline-flex;
+     align-items:center;
+     gap:0.5rem;
+     border-radius:8px;
+     text-decoration:none;
+     font-weight:600;
+   ">
+<img src="./public/logo/logo_cut.png" height="20" style="display:block;">
+<span>Testar <strong>➚</strong></span>
+</a>
