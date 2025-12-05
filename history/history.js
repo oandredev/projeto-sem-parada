@@ -190,8 +190,11 @@ function renderHistory(historyData, container) {
                     </div>
 
                     <div class="card-footer">
-                        <p class="total-amount">
-                            <strong>Total da Compra: R$ ${total}</strong>
+                        <p >
+                           Total da Compra:
+                        </p>
+                        <p >
+                            R$ ${total}
                         </p>
                     </div>
                 </div>

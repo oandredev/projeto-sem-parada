@@ -6,7 +6,7 @@
 
 .title {
   text-align: center;
-  font-size: 350%;
+  font-size: 250%;
   color: #044c92;
 }
 
@@ -116,19 +116,21 @@
 .card-footer {
   background: #044c92;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 3.1rem 0.5rem 1rem;
   border-top: 1px solid #ddd;
-  border-radius: 0 0 8px 8px;
+  border-radius: 8px;
 }
 
 .card-footer p {
   font-size: 18px;
   font-weight: bold;
   margin: 0;
+  color: white;
 }
 
-.total-amount {
-  color: white;
+.empty-state {
+  text-align: center;
+  color: #666666;
 }
